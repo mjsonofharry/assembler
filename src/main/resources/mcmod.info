@@ -1,0 +1,16 @@
+[
+{
+  "modid": "assembler",
+  "name": "Assembler",
+  "description": "Automatic crafting.",
+  "version": "${version}",
+  "mcversion": "${mcversion}",
+  "url": "https://github.com/mjsonofharry/assembler",
+  "updateUrl": "",
+  "authorList": ["Matthew James Harrison"],
+  "credits": "",
+  "logoFile": "",
+  "screenshots": [],
+  "dependencies": []
+}
+]
