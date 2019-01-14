@@ -42,9 +42,9 @@ public class Assembler
 }
 
 
-class AssemblerBlock extends BlockContainer
+class AssemblerBlockContainer extends BlockContainer
 {
-    AssemblerBlock() {
+    AssemblerBlockContainer() {
         super(Material.ROCK);
     }
 
