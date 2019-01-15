@@ -32,13 +32,21 @@ class AssemblerBlockContainer extends BlockContainer
         World worldIn, BlockPos pos, IBlockState state, EntityPlayer playerIn,
         EnumHand hand, EnumFacing facing, float hitX, float hitY, float hitZ)
     {
-        playerIn.openGui(Assembler.instance, AssemblerGuiHandler.getGuiID(), worldIn, pos.getX(), pos.getY(), pos.getZ());
+        if (!worldIn.isRemote) {
+            playerIn.openGui(Assembler.instance, AssemblerGuiHandler.getGuiID(), worldIn, pos.getX(), pos.getY(), pos.getZ());
+        }
         return true;
     }
     
     @Override
-    public void breakBlock(World worldIn, BlockPos pos, IBlockState state) {
-        InventoryHelper.dropInventoryItems(worldIn, pos, (IInventory)worldIn.getTileEntity(pos));
+    public void breakBlock(World worldIn, BlockPos pos, IBlockState state)
+    {
+        TileEntity tileEntity = worldIn.getTileEntity(pos);
+        if (tileEntity instanceof IInventory)
+        {
+            IInventory inventory = (IInventory)tileEntity;
+            InventoryHelper.dropInventoryItems(worldIn, pos, inventory);
+        }
         super.breakBlock(worldIn, pos, state);
     }
 }
