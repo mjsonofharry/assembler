@@ -32,7 +32,7 @@ class AssemblerBlockContainer extends BlockContainer
         World worldIn, BlockPos pos, IBlockState state, EntityPlayer playerIn,
         EnumHand hand, EnumFacing facing, float hitX, float hitY, float hitZ)
     {
-        playerIn.openGui(Assembler.instance, 0, worldIn, pos.getX(), pos.getY(), pos.getZ());
+        playerIn.openGui(Assembler.instance, AssemblerGuiHandler.getGuiID(), worldIn, pos.getX(), pos.getY(), pos.getZ());
         return true;
     }
     
