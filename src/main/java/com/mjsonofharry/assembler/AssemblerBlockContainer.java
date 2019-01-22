@@ -33,7 +33,7 @@ class AssemblerBlockContainer extends BlockContainer
         EnumHand hand, EnumFacing facing, float hitX, float hitY, float hitZ)
     {
         if (!worldIn.isRemote) {
-            playerIn.openGui(Assembler.instance, AssemblerGuiHandler.getGuiID(), worldIn, pos.getX(), pos.getY(), pos.getZ());
+            playerIn.openGui(Assembler.instance, AssemblerGuiHandler.GUUID, worldIn, pos.getX(), pos.getY(), pos.getZ());
         }
         return true;
     }

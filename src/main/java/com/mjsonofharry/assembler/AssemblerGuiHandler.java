@@ -8,18 +8,13 @@ import net.minecraftforge.fml.common.network.IGuiHandler;
 
 public class AssemblerGuiHandler implements IGuiHandler
 {
-    private static final int GUUID = 0;
+    public static final int GUUID = 0;
 
-    private static AssemblerGuiHandler assemblerGuiHandler = new AssemblerGuiHandler();
+    private static AssemblerGuiHandler mAssemblerGuiHandler = new AssemblerGuiHandler();
 
     public static AssemblerGuiHandler getInstance()
     {
-        return assemblerGuiHandler;
-    }
-
-    public static int getGuiID()
-    {
-        return GUUID;
+        return mAssemblerGuiHandler;
     }
 
     @Override
